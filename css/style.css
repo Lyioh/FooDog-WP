@@ -114,7 +114,6 @@ body, html {
     grid-template-columns: repeat(5, 20%);
     background-color: #3A3E43;
     color: #FFFFFF;
-    grid-column-gap: 10vh;
 }
 
 .position-item-footer {
@@ -155,6 +154,7 @@ body, html {
     color: #AAAAAA;
     font-size: 1.7vh;
     margin-left: 20%;
+    grid-column: 1 / 3;
 }
 
 hr {
@@ -165,9 +165,6 @@ hr {
 /*
 * Popular Posts
 */
-.footer-section-title {
-    grid-column: 1 / 3;
-}
 
 #popular-post-section {
     display: grid;
