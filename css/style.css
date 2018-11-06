@@ -163,7 +163,10 @@ hr {
 /*
 * Popular Posts
 */
-.popular-posts-section {
+#footer-section-title {
+    grid-column: 1 / span 2;
+}
+#popular-posts-section {
     display: grid;
     grid-template-columns: 25% 75%;
 }
@@ -174,7 +177,7 @@ hr {
 }
 
 .image-popular-post img {
-    width: 40%;
+    width: 100%;
 }
 
 .popular-post-title {
