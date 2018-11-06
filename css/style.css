@@ -6,9 +6,13 @@ body, html {
 }
 
 #container {
-    width: 100vw;
     display: grid;
     grid-template-columns: 15% 70% 15%;
+}
+
+.first-page {
+    height: 100vh;
+    grid-column: 2 / span 1;
 }
 
 .tag {
@@ -30,7 +34,6 @@ body, html {
 */
 
 #header {
-    grid-column: 2 / span 1;
     text-align: center;
 }
 
@@ -59,7 +62,6 @@ body, html {
 */
 
 #highlights-container {
-    grid-column: 2 / span 1;
     display: grid;
     grid-gap: 1vw;
     padding-top: 2vh;
