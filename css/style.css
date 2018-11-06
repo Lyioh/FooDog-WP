@@ -1,0 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #4B4F54;
+}
+
+#container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+}
+
+.tag {
+    text-transform: uppercase;
+    color: #FF9D7E;
+    font-size: 0.8em;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+.article-title {
+    color: #4B4F54;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/*
+* HEADER SECTION
+*/
+
+#header {
+    grid-column: 2 / span 1;
+    text-align: center;
+    
+}
+
+#main-title {
+    font-family: 'Crimson Text', sans-serif;
+    font-size: 4em;
+    color: #404040;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2vh; 
+}
+
+#navbar li {
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline;
+    padding-left: 2.5vw;
+} 
+
+/*
+* HIGHLIGHTS SECTION
+*/
+
+#highlights-container {
+    display: grid;
+    grid-gap: 1vw;
+    padding-top: 2vh;
+    margin-bottom: 5vh; 
+    grid-template-columns: 60% 40%;
+    border-top: 2px solid #F5F5F5;
+}
+
+#left-title {
+    text-decoration: none;
+    font-size: 1.5em;
+}
+#highlights-left img {
+    width: 100%;
+}
+
+#highlights-right {
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+#highlights-right a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #4B4F54;
+    justify-content: left;
+}
+
+.right-img img {
+    width: 100%;
+}
