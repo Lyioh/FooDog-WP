@@ -112,7 +112,7 @@ body, html {
     grid-template-columns: repeat(5, 20%);
     background-color: #3A3E43;
     color: #FFFFFF;
-    
+    grid-column-gap: 10vh;
 }
 
 .position-item-footer {
@@ -163,27 +163,42 @@ hr {
 /*
 * Popular Posts
 */
-#footer-section-title {
-    grid-column: 1 / span 2;
+.footer-section-title {
+    grid-column: 1 / 3;
 }
-#popular-posts-section {
+
+#popular-post-section {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 40% 60%;
 }
 
-.image-popular-post {
-    grid-column: 1 / span 1;
-    background-color: red;
+.popular-post-image {
+    grid-column: 1 / 2;
 }
 
-.image-popular-post img {
+.popular-post-image img {
     width: 100%;
 }
 
 .popular-post-title {
-    grid-column: 2 / span 1;
+    grid-column: 2 / 3;
     color: #4B4F54;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 0.6em;
+    text-align: left;
+    margin-left: 2vh;
 }
+
+#popular-post-title1 {
+    grid-row: 2 / 3;
+}
+
+#popular-post-title2 {
+    grid-row: 3 / 4;
+}
+
+#popular-post-title3 {
+    grid-row: 4 / 5;
+}   
+
