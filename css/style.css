@@ -32,7 +32,6 @@ body, html {
 #header {
     grid-column: 2 / span 1;
     text-align: center;
-    
 }
 
 #main-title {
@@ -60,6 +59,7 @@ body, html {
 */
 
 #highlights-container {
+    grid-column: 2 / span 1;
     display: grid;
     grid-gap: 1vw;
     padding-top: 2vh;
@@ -92,4 +92,95 @@ body, html {
 
 .right-img img {
     width: 100%;
+}
+
+/*
+* FEATURED CONTAINER 
+*/
+
+
+
+
+
+/*
+* FOOTER
+*/
+
+#footer {
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    background-color: #3A3E43;
+    color: #FFFFFF;
+    
+}
+
+.position-item-footer {
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+}
+
+/*
+* Categories
+*/
+
+#footer ul {
+    margin-top: 0;
+}
+
+#footer li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2vh; 
+    font-size: 0.8em;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+
+}
+
+#categories-section {
+    grid-column: 2 / span 1;
+}
+
+.footer-section-title {
+    text-transform: uppercase;
+    color: #AAAAAA;
+    font-size: 1.7vh;
+    margin-left: 20%;
+}
+
+hr {
+    opacity: 0.2;
+    margin-bottom: 2.8vh;
+}
+
+/*
+* Popular Posts
+*/
+.popular-posts-section {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.image-popular-post {
+    grid-column: 1 / span 1;
+    background-color: red;
+}
+
+.image-popular-post img {
+    width: 40%;
+}
+
+.popular-post-title {
+    grid-column: 2 / span 1;
+    color: #4B4F54;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.6em;
 }
