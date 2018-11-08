@@ -47,3 +47,34 @@
 .article-section {
     padding-top: 5vh;
 }
+
+.social-count {
+    color: #ffffff;
+    padding: 2vh;
+}
+
+.social-clic {
+    color: #ffffff;
+    float: right;
+}
+
+#facebook-button {
+    background-color: rgb(137, 157, 206);
+    padding: 2vh;
+}
+
+#twitter-button {
+    margin-top: 1vh;
+    background-color: rgb(96, 210, 245);
+    padding: 2vh;
+}
+
+#instagram-button {
+    margin-top: 1vh;
+    background-color: rgb(112, 156, 191);
+    padding: 2vh;
+}
+
+#dog-ad {
+    padding-top: 5vh;
+}
