@@ -101,6 +101,20 @@ body, html {
 * FEATURED CONTAINER 
 */
 
+#featured-container {
+    display: grid;
+    grid-gap: 1vw;
+    padding-top: 2vh;
+    margin-bottom: 5vh; 
+    grid-template-columns: 33% 33% 33%;
+    background-color: red;
+}
+
+#featured-articles {
+    display: grid;
+    grid-column: 1 / span 2;
+    background-color: blue;
+}
 
 
 
