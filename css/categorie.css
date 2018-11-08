@@ -1,0 +1,40 @@
+
+#categorie-nutrition-head{
+    background-color: #F7F7F7;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    color:rgb(105, 108, 110);
+    padding: 10px;
+    font-size: 18px;
+    
+}
+
+.nutrition-1{
+    height:auto;
+    margin: 10px;
+    display: flex;
+}
+
+.img-nutri{
+    height:180px;
+}
+.principio{
+    color:#FF9372; 
+    font-size: 13px;
+    display:inline;
+}
+.texto-1{
+   margin-left: 20px;
+   width: 35%;
+   justify-items: center;
+   color: black;
+}
+
+.nutrition-2 {
+    height:auto;
+    margin: 10px;
+    display: flex;
+    border:solid 1px;
+}
+
