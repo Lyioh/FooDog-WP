@@ -5,20 +5,28 @@
 #top-title {
     text-align: center;
     font-family: 'Crimson Text';
-    font-weight: 700;
+    font-weight: 400;
     padding-top: 2vh;
+    font-size: 5em;
+    
 }
 
 #navbar {
     text-align: center;
+    text-transform: uppercase;
 }
 
 #navbar a {
     color: #404040;
     font-weight: 500;
     padding: 0 1vw;
+    letter-spacing: 1px;
 }
 
 #header-hr {
     opacity: 0.7;
+}
+
+.image-100 {
+    width: 100%;
 }

@@ -1,0 +1,49 @@
+#main-article img {
+    width: 100%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.orange-tag {
+    text-transform: uppercase;
+    color: #FF9D7E;
+    font-size: 0.8em;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    padding-top: 3vh;
+}
+
+.article-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgb(75, 79, 84);
+    text-align: center;
+}
+
+.article-title-small {
+    font-size: 70%;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgb(75, 79, 84);
+    text-align: center;
+}
+
+
+/*
+* FEATURED SECTION
+*/
+
+#featured-section {
+    padding-top: 5vh;
+}
+
+.article-synopsis {
+    font-family: 'Crimson';
+    margin-bottom: 2vh;
+}
+
+.article-section {
+    padding-top: 5vh;
+}
