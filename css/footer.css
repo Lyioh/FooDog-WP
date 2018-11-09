@@ -17,11 +17,20 @@ footer{
     text-decoration: none;
     display: flex;
 }
-a:link{
+#categoria-footer a:link{
     text-decoration: none;
     color: #FFF;
 }
-a:hover{
+#categoria-footer a:hover{
+    color: gray;
+}
+
+.popular-post a:link{
+    text-decoration:none;
+    color: #FFF;
+}
+
+.popular-post a:hover{
     color: gray;
 }
 
