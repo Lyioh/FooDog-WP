@@ -1,0 +1,156 @@
+body, html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#titleFoodog {
+    font-family: 'Crimson Text', sans-serif;
+    font-weight: 600;
+    color: black;
+    font-size: 2.2em;
+}
+
+#dropdownMenuButton {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+#nutrition:hover {
+    border-left: solid #FF9D7E 5px;
+}
+
+#nutrition:focus { 
+    background-color: black;
+}
+
+#wellness:hover {
+    border-left: solid orange 5px;
+}
+
+#wellness:focus { 
+    background-color: black;
+}
+
+#lifestyle:hover {
+    border-left: solid orange 5px;
+}
+
+#lifestyle:focus { 
+    background-color: black;
+}
+
+#comunity:hover {
+    border-left: solid orange 5px;
+}
+
+#comunity:focus { 
+    background-color: black;
+}
+
+/* #nutrition:focus {
+
+} */
+
+/*-------------- Form ---------------- */
+#exampleInputEmail1, #sign-up {
+    border-radius: 0;
+    height: 2em;
+    font-size: .7em;
+    font-weight: bold;
+}
+
+#exampleInputEmail1 {
+    border: solid black 1px;
+    line-height: 1.6; /* If Placeholder of the input is moved up, rem/modify this. */
+    width: 11em;
+}
+
+#sign-up {
+    border: solid black 1.5px;
+    line-height: 1;
+}
+
+#submit_form p {
+    font-size: 0.7em;
+}
+
+/*-- Logos droite ----*/
+
+#logo_farmer {
+    height : 6vh;
+}
+
+#loupe {
+    height: 4vh;
+} 
+
+#searchInput {
+    display: none;
+    height: 1.6em;
+} 
+
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////
+
+/*
+header h1 {
+    display: inline;
+    font-family: 'Crimson Text', sans-serif;
+    font-weight: 600;
+}
+
+#foodogLogo {
+    text-decoration: none;
+    color: black;
+}
+
+.fa-bars {
+    position: relative;
+    opacity: 0.6;
+    margin-top: 3.3vh;
+}
+#dropdownMenuButton {
+    border: none;
+}
+
+#dropDownMenu {
+    border-color: blue; 
+}
+/*-------------- Form ---------------- 
+#exampleInputEmail1 {
+    border-radius: 0;
+    border: solid black 1px;
+}
+
+#sign-up {
+    border-radius: 0;
+    border: solid black 1.5px;
+}
+
+#submit_form p {
+    font-size: 0.8em;
+}
+/*-- Logo droite ----
+
+#logo_farmer {
+    display: inline-block;
+    height : 9.5vh;
+}
+
+#searchForm {
+    display: inline-block;
+}
+
+#loupe {
+    height: 4vh;
+} 
+
+#searchInput {
+    display: none;
+} 
+ */
+
