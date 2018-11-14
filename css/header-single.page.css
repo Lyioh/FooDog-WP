@@ -95,7 +95,19 @@ body, html {
         display: none;
     }
 
+    #titleFoodog {
+        margin-left: 40px;
+        margin-right: 0;
+    }
     #logo_farmer {
         display: none;
+    }
+
+    #dropdownMenuButton {
+        padding: 0;
+    }
+
+    #searchInput {
+        width: 4.8em;
     }
   }
