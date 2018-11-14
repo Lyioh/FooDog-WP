@@ -77,11 +77,11 @@ body, html {
 /*-- Logos droite ----*/
 
 #logo_farmer {
-    height : 6vh;
+    height : 3em;
 }
 
 #loupe {
-    height: 4vh;
+    height: 1.5em;
 } 
 
 #searchInput {
@@ -90,67 +90,12 @@ body, html {
 } 
 
 
+@media screen and (max-width: 812px) {
+    #submit_form {
+        display: none;
+    }
 
-
-
-
-/*////////////////////////////////////////////////////////////////////////////////
-
-/*
-header h1 {
-    display: inline;
-    font-family: 'Crimson Text', sans-serif;
-    font-weight: 600;
-}
-
-#foodogLogo {
-    text-decoration: none;
-    color: black;
-}
-
-.fa-bars {
-    position: relative;
-    opacity: 0.6;
-    margin-top: 3.3vh;
-}
-#dropdownMenuButton {
-    border: none;
-}
-
-#dropDownMenu {
-    border-color: blue; 
-}
-/*-------------- Form ---------------- 
-#exampleInputEmail1 {
-    border-radius: 0;
-    border: solid black 1px;
-}
-
-#sign-up {
-    border-radius: 0;
-    border: solid black 1.5px;
-}
-
-#submit_form p {
-    font-size: 0.8em;
-}
-/*-- Logo droite ----
-
-#logo_farmer {
-    display: inline-block;
-    height : 9.5vh;
-}
-
-#searchForm {
-    display: inline-block;
-}
-
-#loupe {
-    height: 4vh;
-} 
-
-#searchInput {
-    display: none;
-} 
- */
-
+    #logo_farmer {
+        display: none;
+    }
+  }
