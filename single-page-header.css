@@ -1,0 +1,110 @@
+.titles {
+    text-align: center;
+}
+
+.titles h6 {
+    font-size: .7em;
+    color: #ff8d6a;
+}
+
+.titles h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-top: .7em;
+}
+
+hr {
+    text-align: center;
+    width: 100%;
+}
+
+.social img {
+    display: inline;
+    max-width: 10%;
+    height: auto;
+    margin-top: -1em;
+    margin-bottom: -1em;
+}
+
+.social p {
+    display: inline;
+    font-size: .5em;
+    color: #c1c1c1;
+}
+
+.social p a {
+    text-decoration: none;
+    color: #c1c1c1;
+}
+
+.comment-button {
+    font-size: .5em;
+    border-radius: .3em;
+    background-color: #555555;
+    color:white;
+    margin-left: 15em;
+}
+
+i {
+    color: white;
+    margin-right: .5em;
+}
+
+.social a:hover {
+    color: black;
+}
+
+.share_me {
+    color: black;
+    font-size: .7em;
+    text-decoration: none!important;
+}
+
+.facebook-img {
+    width: 5%;
+}
+
+.twitter-img {
+    width: 5%;
+}
+
+.pinterest-img {
+    width: 5%;
+}
+
+@media (min-width: 321px) and (max-width: 736px) {
+    .social {
+        display: none;
+    }
+}
+
+.paragraph-text h6 {
+    font-weight: 800;
+}
+
+.share-host {
+    font-size: .5em;
+    border-radius: .3em;
+    color:white;
+}
+
+#comment-btn {
+    background-color: #555555;
+}
+
+#facebbok {
+    background-color: #899DCE;
+}
+
+#twitter {
+    background-color: #60D2F5;
+}
+
+#pinterest {
+    background-color: #F74C53;
+}
