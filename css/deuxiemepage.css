@@ -1,4 +1,4 @@
-@media (min-width: 992px) { 
+
 #title-nutrition{
     text-align: center;
     background-color:#F7F7F7;
@@ -9,7 +9,7 @@
 
 #imagenes{
     height: 200px;
-    width: 300px;
+    width: 280px;
 }
 
 .container{
@@ -62,8 +62,8 @@ a:link{
 #share-icon{
    margin:5px;
 }
-#publi{
-    height: 550px;
-    width: 300px;
+ hr{
+ margin-right: 40%;
+ margin-left: 10%;
  }
-}
+ 
