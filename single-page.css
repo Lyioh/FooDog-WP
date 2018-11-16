@@ -152,17 +152,12 @@ i {
 }
 
 .imgItem {
-    width: 7em;
-    height: 7em;
-}
-/* UL */
-#ulMayInterest {
-    list-style: none;
-    padding-left: 0;
+    width: 12em;
+    height: 11em;
 }
 
-#ulMayInterest li p {
-    width: 8.2em;
+#ulMayInterest p {
+    width: 13em;
     font-weight: 700;
     font-size: 90%;
 }
@@ -205,7 +200,7 @@ fieldset {
         text-align: center;
     }
 
-    #item3 {
-        margin-top: 1.3em;
-    }
+   /*  #item3 {
+        margin-top: 1em;
+    }*/
 }
