@@ -154,6 +154,7 @@ i {
 .imgItem {
     width: 12em;
     height: 11em;
+    object-fit: cover;
 }
 
 #ulMayInterest p {
