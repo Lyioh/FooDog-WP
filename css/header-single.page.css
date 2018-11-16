@@ -53,14 +53,14 @@ body, html {
 
 
 /*-------------- Form ---------------- */
-#exampleInputEmail1, #sign-up {
+#inputEmailHeader, #sign-up {
     border-radius: 0;
     height: 2em;
     font-size: .7em;
     font-weight: bold;
 }
 
-#exampleInputEmail1 {
+#inputEmailHeader {
     border: solid black 1px;
     line-height: 1.6; /* If Placeholder of the input is moved up, rem/modify this. */
     width: 11em;
