@@ -151,17 +151,18 @@ i {
     -webkit-backface-visibility: hidden;
 }
 
+.imgItem {
+    width: 7em;
+    height: 7em;
+}
+/* UL */
 #ulMayInterest {
     list-style: none;
     padding-left: 0;
 }
 
-.imgItem {
-    width: 8em;
-}
-
 #ulMayInterest li p {
-    width: 9em;
+    width: 8.2em;
     font-weight: 700;
     font-size: 90%;
 }
