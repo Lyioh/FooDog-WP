@@ -12,20 +12,20 @@ footer{
     background-color:#303336;
     color: aliceblue;
 }
-#categoria-footer{
+.categoria-footer{
     background-color: #3A3E43;
     text-decoration: none;
     display: flex;
 }
-#categoria-footer a:link{
+.categoria-footer a{
     text-decoration: none;
-    color: #FFF;
+    color: white;
 }
-#categoria-footer a:hover{
-    color: gray;
+.categoria-footer a:hover{
+    color:gray;
 }
 
-.popular-post a:link{
+.popular-post a{
     text-decoration:none;
     color: #FFF;
 }

@@ -60,7 +60,19 @@ a:link{
 } 
 
 #share-icon{
-   margin:5px;
+    padding: 4px;
+    border:solid 1px;
+    border-radius: 50%;
+}
+.share{
+    display: flex;
+    height: 26px;
+}
+
+.share-text{
+    color:rgb(148, 147, 147);
+    font-weight: 600;
+    margin: 4px;
 }
  hr{
  margin-right: 33%;
@@ -70,3 +82,8 @@ a:link{
      margin-top: 0%;
  }
  
+ .page-link{
+    color:black;
+    margin:2px;
+    border-radius: 100%;
+}
