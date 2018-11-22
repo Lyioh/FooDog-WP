@@ -1,0 +1,54 @@
+footer{
+    background-color:#3A3E43;
+    margin-top: 350px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#titulos{
+    color: gray;
+}
+
+#resaux-footer{
+    background-color:#303336;
+    color: aliceblue;
+}
+.categoria-footer{
+    background-color: #3A3E43;
+    text-decoration: none;
+    display: flex;
+}
+.categoria-footer a{
+    text-decoration: none;
+    color: white;
+}
+.categoria-footer a:hover{
+    color:gray;
+}
+
+.popular-post a{
+    text-decoration:none;
+    color: #FFF;
+}
+
+.popular-post a:hover{
+    color: gray;
+}
+
+#post-image{
+ height:70px;
+ width:70px;
+ margin:4px;
+}
+
+#instagram-image-footer{
+ height:70px;
+ width:70px;
+ margin:4px;
+}
+
+.iconos-footer{
+    background-color:#3A3E43; 
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+}

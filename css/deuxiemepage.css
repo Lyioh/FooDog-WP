@@ -1,0 +1,89 @@
+
+#title-nutrition{
+    text-align: center;
+    background-color:#F7F7F7;
+    height: 60px;
+    padding: 15px;
+    color: rgb(68, 67, 67);
+}
+
+#imagenes{
+    height: 200px;
+    width: 280px;
+}
+
+.container{
+    display:flex;
+    margin-top: 30px;
+}
+
+#nutri{
+    margin-top: 5px;
+    color: #FF8D6A;
+    font-weight: bold;
+}
+
+a{
+  font-weight: 900;
+  color: black;
+}
+
+a:hover{
+color: gray;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+#nutri-texto{
+    font-family: 'Crimson Text', serif;
+}
+
+#contenedor-social{
+    padding-top: 12%;
+}
+
+#facebook-button {
+    background-color: rgb(137, 157, 206);
+    padding: 1vh;
+}
+
+#twitter-button {
+    background-color: rgb(96, 210, 245);
+    padding: 1vh;
+}
+
+#instagram-button {
+    background-color: rgb(112, 156, 191);
+    padding: 1vh;
+} 
+
+#share-icon{
+    padding: 4px;
+    border:solid 1px;
+    border-radius: 50%;
+}
+.share{
+    display: flex;
+    height: 26px;
+}
+
+.share-text{
+    color:rgb(148, 147, 147);
+    font-weight: 600;
+    margin: 4px;
+}
+ hr{
+ margin-right: 33%;
+ margin-left: 17%;
+ }
+ footer{
+     margin-top: 0%;
+ }
+ 
+ .page-link{
+    color:black;
+    margin:2px;
+    border-radius: 100%;
+}
