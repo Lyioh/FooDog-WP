@@ -13,10 +13,14 @@ footer{
     color: aliceblue;
 }
 .categoria-footer{
-    background-color: #3A3E43;
     text-decoration: none;
     display: flex;
 }
+
+#categoria-footer .categoria-footer {
+    background-color: #3A3E43;
+}
+
 .categoria-footer a{
     text-decoration: none;
     color: white;
