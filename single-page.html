@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FooDog Single-Page</title>
+    <title>Sigle Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="single-page.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/header-single.page.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -15,10 +17,55 @@
 </head>
 
 <body>
-    <hr>
-
+    <!-- ----------------------------- Header -------------------------------->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- The icone menu -->
+            <div class="nav-item dropdown">
+                <button class="nav-link mb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="dropDownMenu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="nutrition" class="dropdown-item" href="#">Nutrition</a>
+                    <a id="wellness" class="dropdown-item" href="#">Wellness</a>
+                    <a id="lifestyle" class="dropdown-item" href="#">Lifestyle</a>
+                    <a id="comunity" class="dropdown-item" href="#">Comunity</a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="nav-item">
+                <a href="#" id="titleFoodog" class="navbar-brand mb-0 h1">Foodog</a>
+            </div>
+            <!-- The form sign UP -->
+            <div id="submit_form" class="nav-item mx-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <p class="my-2 mr-2 font-weight-bold">Digest In Your Inbox</p>
+                    <div class="form-group">
+                        <input type="email" class="form-control-sm" id="inputEmailHeader" aria-describedby="emailHelp"
+                            placeholder="YOUR EMAIL">
+                    </div>
+                    <button type="submit" id="sign-up" class="btn btn-dark btn-sm">SIGN UP</button>
+                </form>
+            </div>
+            <!-- Logo farmer dog -->
+            <div class="nav-item">
+                <a href="https://www.thefarmersdog.com/" target="_blank"><img src="image/logo_farmer.png" id="logo_farmer"
+                        class="img-fluid rounded mr-3 mt-0" alt="Responsive image"></a>
+            </div>
+            <!-- Search section -->
+            <div class="nav-item mr-0">
+                <form id="searchForm" action="#" target="_blank">
+                    <input type="text" name="search" placeholder="Search..." id="searchInput" class="mr-2">
+                    <a href="#"><img src="image/loupe.svg" id="loupe" class="img-fluid rounded mr-sm-0 mr-lg-5 mt-lg-0"
+                            alt="Responsive image"></a>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- ---------------------------------------------------------------------------------- -->
+    <hr class="mt-0">
     <div class="container-fluid">
-
         <div class="titles">
             <div class="row">
                 <div class="col-sm-12 col-md-5 offset-md-3">
@@ -34,7 +81,7 @@
         </div>
 
         <div class="col-sm-12 col-md-5 offset-md-3">
-            <img src="/image/dogimg.jpg" class="img-fluid" alt="">
+            <img src="image/dogimg.jpg" class="img-fluid" alt="">
         </div>
 
 
@@ -42,13 +89,13 @@
             <div class="social col-sm-12 col-md-5 offset-md-3">
                 <hr>
                 <div>
-                    <img src="/image/farmers-dog.png" class="img-fluid" alt="">
+                    <img src="image/logo_farmer.png" class="img-fluid" alt="">
                     <p>by: <a href="#">THE FARMER'S DOG</a></p>
                     <button class="comment-button"><i class="fa fa-comment"></i>COMMENT</button>
                     <a class="share_me" href="#">SHARE</a>
-                    <img class="facebook-img" src="/image/facebook-img.svg" alt="">
-                    <img class="twitter-img" src="/image/twitter-img.svg" alt="">
-                    <img class="pinterest-img" src="/image/pinterest-img.svg" alt="">
+                    <img class="facebook-img" src="image/facebook-img.svg" alt="">
+                    <img class="twitter-img" src="image/twitter-img.svg" alt="">
+                    <img class="pinterest-img" src="image/pinterest-img.svg" alt="">
 
                 </div>
                 <hr>
@@ -128,15 +175,89 @@
 
         <div class="row">
             <div id="social_btn" class="col-sm-12 col-md-5 offset-md-3">
-                    <a id="share-link" class="share_me-btn" href="#">SHARE</a>
-                    <button id="comment-btn" class="share-host"><i class="fa fa-comment"></i>0 COMMENT</button>
-                    <button id="facebbok" class="share-host"><i class="fab fa-facebook-f"></i>SHARE</button>
-                    <button id="twitter" class="share-host"><i class="fab fa-twitter"></i>SHARE</button>
-                    <button id="pinterest" class="share-host"><i class="fab fa-pinterest"></i>SHARE</button>
+                <a id="share-link" class="share_me" href="#">SHARE</a>
+                <button id="comment-btn" class="share-host"><i class="fa fa-comment"></i>0 COMMENT</button>
+                <button id="facebbok" class="share-host"><i class="fab fa-facebook-f"></i>SHARE</button>
+                <button id="twitter" class="share-host"><i class="fab fa-twitter"></i>SHARE</button>
+                <button id="pinterest" class="share-host"></button>
+            </div>
+        </div>
+        <!------------------------------ Farmer logo explanation ------------------------------>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-5 offset-md-3">
+                <div class="d-flex justify-content-start">
+                    <div>
+                        <a href="https://www.thefarmersdog.com/" target="_blank"><img src="image/logo_farmer.png" id="logo_farmer2"
+                                class="img-responsive mr-2" alt="image"></a>
+                    </div>
+                    <div id="farmerTitle">
+                        <h6>The farmer's dog</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, aliquam ea tenetur
+                            excepturi esse beatae, repellendus quia rem obcaecati non modi molestias pariatur quibusdam
+                            reiciendis voluptatum facilis earum asperiores saepe!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----------------------------------May interest------------------------------------------------>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-5 offset-md-3">
+                <div id="h6MayInterest">
+                    <h6>You might also like</h6>
+                </div>
+                <div id="ulMayInterest" class="d-flex flex-wrap justify-content-around">
+                    <div id="item1">
+                        <img class="img-responsive imgItem mt-3 mb-1" src="image/chienInterest.webp" alt="chien">
+                        <p class="mb-0">Superfood in your kitchen: Pumpkins for dogs</p>
+                    </div>
+                    <div id="item2">
+                        <img class="img-responsive imgItem mt-3 mb-1" src="image/chienInterest.webp" alt="chien">
+                        <p class="mb-0">The truth about table scraps for dogs</p>
+                    </div>
+                    <div id="item3">
+                        <img class="img-responsive imgItem mt-3 mt-md-3 mb-1" src="image/chienInterest.webp" alt="chien">
+                        <p class="mb-0">Superfoods in your kitchen: apple cider vinegar for dogs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------------------- THe form ------------------------------------------------>
+        <div class="row">
+            <div class="col-sm-12 col-md-5 offset-md-3">
+                <hr>
+                <form>
+                    <fieldset>Leave a response</fieldset>
+                    <div class="form-group">
+                        <label></label>
+                        <textarea class="form-control" id="textArea" rows="6" placeholder="Write your comment here..."></textarea>
+                        <label></label>
+                        <div class="row">
+                            <div class="col">
+                                <input id="name" type="text" class="form-control" placeholder="Name...">
+                            </div>
+                            <div class="col">
+                                <input id="email" type="text" class="form-control" placeholder="Email...">
+                            </div>
+                            <div class="col">
+                                <input id="website" type="text" class="form-control" placeholder="Website...">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="sign-upForm" class="btn btn-dark btn-sm">Leave a comment</button>
+                </form>
             </div>
         </div>
     </div>
-
+    <div>x</div>
+    <div>xx</div>
+    <div>xxx</div>
+    <div>xxxx</div>
+    <div>x</div>
+    <div>xx</div>
+    <div>xxx</div>
+    <div>xxxx</div>
+    <script src="header-single-page.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

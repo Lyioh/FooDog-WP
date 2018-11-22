@@ -11,14 +11,29 @@
 
 #navbar {
     text-align: center;
+<<<<<<< HEAD
+=======
+    text-transform: uppercase;
+>>>>>>> 9fd880e3143bc4eab7f384ee98c102704ac4790d
 }
 
 #navbar a {
     color: #404040;
     font-weight: 500;
     padding: 0 1vw;
+<<<<<<< HEAD
+=======
+    letter-spacing: 1px;
+>>>>>>> 9fd880e3143bc4eab7f384ee98c102704ac4790d
 }
 
 #header-hr {
     opacity: 0.7;
+<<<<<<< HEAD
+=======
+}
+
+.image-100 {
+    width: 100%;
+>>>>>>> 9fd880e3143bc4eab7f384ee98c102704ac4790d
 }

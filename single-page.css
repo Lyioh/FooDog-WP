@@ -47,7 +47,7 @@ hr {
     border-radius: .3em;
     background-color: #555555;
     color:white;
-    margin-left: 28em;
+    margin-left: 15em;
 }
 
 i {
@@ -77,61 +77,131 @@ i {
     width: 5%;
 }
 
-@media (min-width: 321px) and (max-width: 736px) {
-    .social {
-        display: none;
-    }
-}
+
 
 .paragraph-text h6 {
     font-weight: 800;
-}
-
-.share_me-btn {
-    margin-left: 8em;
-    color: black;
-    font-size: .7em;
-    text-decoration: none!important;
 }
 
 .share-host {
     font-size: .5em;
     border-radius: .3em;
     color:white;
-    height: 3em;
-    margin-left: 1.5em;
 }
 
 #comment-btn {
     background-color: #555555;
-    padding: 5px 8px;
 }
 
 #facebbok {
     background-color: #899DCE;
-    padding: 4px 22px;
 }
 
 #twitter {
     background-color: #60D2F5;
-    padding: 4px 22px;
 }
 
 #pinterest {
     background-color: #F74C53;
-    padding: 4px 22px;
 }
 
-.fab {
-    font-size: 2em;
+/*/////////////// Logo farmer explanation ////////////// */
+#logo_farmer2 {
+    height : 3.5em;
+
+}
+
+#farmerTitle h6 {
+    font-weight: 900;
+    font-size: .9em;
+}
+
+#farmerTitle p {
+    font-weight: 900;
+    font-size: .6em;
+    color: grey;
+}
+
+
+/*/////////      May interest-    ///////////*/
+#h6MayInterest  {
+    display: block;
+    position: relative;
+}
+
+#h6MayInterest h6 {
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    margin: 0;
+    padding: 0 15px 0 0;
+    z-index: 10;
+    font-weight: 700;
+}
+
+#h6MayInterest:after {
+    content: '';
+    height: .2em;
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.imgItem {
+    width: 12em;
+    height: 11em;
+    object-fit: cover;
+}
+
+#ulMayInterest p {
+    width: 13em;
+    font-weight: 700;
+    font-size: 90%;
+}
+
+/*///////////   Form     /////////////*/
+fieldset {
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+}
+
+#textArea, #name, #email, #website {
+    border-radius: 0;
+}
+
+#sign-upForm {
+    border-radius: 0;
+    height: 3em;
+    padding-left: .9em;
+    padding-right: .9em;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 @media (min-width: 321px) and (max-width: 736px) {
-    .share_me-btn {
-        margin-left: 15em;
+    .social {
+        display: none;
     }
-    .share-host {
-        margin-left: 15em;
-        margin-top: 2em;
+
+    #test {
+        display: inline;
     }
+
+   /*  .imgItem {
+        width: 8em;
+    } */
+
+    #ulMayInterest li p {
+       /*  width: 9em; */
+        text-align: center;
+    }
+
+   /*  #item3 {
+        margin-top: 1em;
+    }*/
 }
