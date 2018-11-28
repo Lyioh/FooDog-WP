@@ -26,6 +26,7 @@ fetch(`https://foodog.herokuapp.com/articles`)
 
 let articleTitle, articleText, articleTags, articleImage;
 
+
 /**
  * 
  * @param {*} img 
@@ -41,7 +42,7 @@ const createArticle = (img, tags, title, text, id) => {
             <div class="row">
                 <img class="offset-1" src="${img}" id="imagenes">
                 <div class="col-10 col-md-4">
-                    <p id="nutri">${tags.join(' ')}</p>
+                    <p id="nutri">${tags.join(' ').toUpperCase()}</p>
                     <a href="single-page.html?id=${id}">${title.toUpperCase()}</a>
                     <p id="nutri-texto">${shortenText(text, 40)}</p>
                     <div class="share">
@@ -78,3 +79,5 @@ const shortenText = (text, length) => {
     res[0] = res[0].charAt(0).toUpperCase() + res[0].slice(1);
     return res.join(' ') + `...`;
 }
+
+shortenText()
