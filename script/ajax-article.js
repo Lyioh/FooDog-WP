@@ -40,8 +40,8 @@ const createArticle = (img, tags, title, text, id) => {
     const HTMLCode = `
         </hr>
             <div class="row centered">
-                <img class="offset-1" src="${img}" id="imagenes">
-                <div class="col-10 col-md-4">
+                <img class="offset-2" src="${img}" id="imagenes">
+                <div class="col-3 col-md-4">
                     <p id="nutri">${tags.join(' ').toUpperCase()}</p>
                     <a href="single-page.html?id=${id}">${title.toUpperCase()}</a>
                     <p id="nutri-texto">${shortenText(text, 40)}</p>
