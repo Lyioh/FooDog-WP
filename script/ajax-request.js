@@ -3,8 +3,6 @@ function createArticle(articles) {
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
-    console.log(domTitles);
-    console.log(articles);
 
     for (let key in articles.docs) {
         domImg[key].src = articles.docs[key].imgUrl;
@@ -12,14 +10,10 @@ function createArticle(articles) {
 
         if (key == 0) {
             let tags = articles.docs[key].tagForArticle.join(" ");
-            /*console.log(tags);
-            console.log(domTags[0]);*/
             domTags[0].innerHTML = tags;
         }
         else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
             let tags = articles.docs[key].tagForArticle.join(" ");
-            console.log(domTags);
-            console.log(tags);
             domTags[key-4].innerHTML = tags;
         }
 
