@@ -39,7 +39,7 @@ let articleTitle, articleText, articleTags, articleImage;
 const createArticle = (img, tags, title, text, id) => {
     const HTMLCode = `
         </hr>
-            <div class="row">
+            <div class="row centered">
                 <img class="offset-1" src="${img}" id="imagenes">
                 <div class="col-10 col-md-4">
                     <p id="nutri">${tags.join(' ').toUpperCase()}</p>
