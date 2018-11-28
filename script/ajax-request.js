@@ -3,10 +3,28 @@ function createArticle(articles) {
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
+    const domNavbar = document.querySelector('.navbar-element');
+    console.log(articles);
+
+    let navbarCategories = []; // Will contain every possible tag
 
     for (let key in articles.docs) {
+        console.log(key);
+        console.log(domImg);
         domImg[key].src = articles.docs[key].imgUrl;
         domTitles[key].innerHTML = articles.docs[key].title;
+        domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}`; // Generate article links
+
+        /* 
+        * GENERATE NAVBAR CATEGORIES
+        */
+
+        /*
+        articles.docs[key].tagForArticle.map((tag) => {
+            if (!navbarCategories.includes(tag.toLowerCase()))
+                navbarCategories.push(tag.toLowerCase());
+        }); // Makes a copy of each tag if it's not already in the array
+       */ 
 
         if (key == 0) {
             let tags = articles.docs[key].tagForArticle.join(" ");
