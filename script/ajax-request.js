@@ -1,5 +1,5 @@
 function createArticle(articles) {
-    const domImg = document.querySelectorAll(".image-100")
+    const domImg = document.querySelectorAll(".images")
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
