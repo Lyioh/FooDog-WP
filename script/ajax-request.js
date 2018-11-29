@@ -1,4 +1,4 @@
-function createArticle(articles) {
+/* function createArticle(articles) {
     const domImg = document.querySelectorAll(".image-100")
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
@@ -19,43 +19,48 @@ function createArticle(articles) {
         * GENERATE NAVBAR CATEGORIES
         */
 
-        /*
-        articles.docs[key].tagForArticle.map((tag) => {
-            if (!navbarCategories.includes(tag.toLowerCase()))
-                navbarCategories.push(tag.toLowerCase());
-        }); // Makes a copy of each tag if it's not already in the array
-       */ 
+/*
+articles.docs[key].tagForArticle.map((tag) => {
+    if (!navbarCategories.includes(tag.toLowerCase()))
+        navbarCategories.push(tag.toLowerCase());
+}); // Makes a copy of each tag if it's not already in the array
+ 
 
-        if (key == 0) {
-            let tags = articles.docs[key].tagForArticle.join(" ");
-            domTags[0].innerHTML = tags;
-        }
-        else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
-            let tags = articles.docs[key].tagForArticle.join(" ");
-            domTags[key-4].innerHTML = tags;
-        }
+if (key == 0) {
+    let tags = articles.docs[key].tagForArticle.join(" ");
+    domTags[0].innerHTML = tags;
+}
+else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
+    let tags = articles.docs[key].tagForArticle.join(" ");
+    domTags[key-4].innerHTML = tags;
+}
 
-        if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
-            let text = shortenText(articles.docs[key].text, 40); // Synopsis
-            domSynopsis[key - 5].innerHTML = text;
-        }
-    }
+if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
+    let text = shortenText(articles.docs[key].text, 40); // Synopsis
+    domSynopsis[key - 5].innerHTML = text;
+}
+}
 }
 
 /** 
- * @param {String} text : Text to shorten
- * @param {Number} length : Wanted final length in words (number)
- * @return sliced text
- **/
+* @param {String} text : Text to shorten
+* @param {Number} length : Wanted final length in words (number)
+* @return sliced text
+*
 
 const shortenText = (text, length) => {
-    let res = text.split(' ').slice(0, length);
-    res[0] = res[0].charAt(0).toUpperCase() + res[0].slice(1);
-    return res.join(' ') + `...`;
-}
+let res = text.split(' ').slice(0, length);
+res[0] = res[0].charAt(0).toUpperCase() + res[0].slice(1);
+return res.join(' ') + `...`;
+} */
 
-
-fetch(`https://foodog.herokuapp.com/articles`)
+/* function createArticle(myObject) {
+    console.log(myObject)
+    for (let key in myObject.docs) {
+            console.log(myObject.docs[key].title)
+    }
+} */
+/* fetch(`https://foodog.herokuapp.com/articles/?page=1`)
     .then(response => {
         if (response.ok) {
             response.json()
@@ -64,9 +69,22 @@ fetch(`https://foodog.herokuapp.com/articles`)
         else {
             console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
         }
+    }) */
+
+document.querySelector("#links").addEventListener("click", function myFunct(event) {
+    console.log(event.target.text)
+    fetch(`https://foodog.herokuapp.com/articles/?page=${event.target.text}`)
+    .then(response => {
+        if (response.ok) {
+            response.json()
+                .then(articles => console.log(articles));
+        }
+        else {
+            console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+        }
     })
 
-
+})
 /* function letsPost() {
     console.log("ok")
     const url = `https://foodog.herokuapp.com/articles`;
