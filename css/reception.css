@@ -20,6 +20,7 @@
     font-weight: 800;
     color: rgb(75, 79, 84);
     text-align: center;
+    text-decoration: none;
 }
 
 .article-title-small {
@@ -82,27 +83,28 @@
 /*
 * MISC
 */
-
-.page-link {
-    color: #4c4f53;
-    display: inline-block;
-    text-decoration: none;
-    background-color: white;
-    border: 1px solid #cbcbcb;;
-    text-align: center;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
+.pagination{
+display:flex;
 }
 
-.page-link-active {
-    color: white;
-    display: inline-block;
-    text-decoration: none;
-    background-color: #4b4f54;
-    border: 1px solid #4c4f53;
+.page-link {
+  padding: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: gray;
+}
+
+/* button :hover{
+    background-color: #3A3E43;
+} */
+
+
+.page-link-special{
     text-align: center;
     border-radius: 50%;
     height: 36px;
     width: 36px;
+    padding: 10px; 
 }

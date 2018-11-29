@@ -26,9 +26,24 @@
 }
 
 .image-100 {
-    width: 100%;
+    width: 280px;
+    height: 200px;
 }
 
+.image-110{
+    width: 190px;
+    height: 170px;
+}
+
+.image-principal{
+    width:300px;
+    height: 370px;
+}
+
+.image-publi{
+    width: 280px;
+    height: 430px;
+}
 #top-title-link {
     color: #404040;
 }
