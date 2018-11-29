@@ -1,12 +1,14 @@
 "use strict";
 
 const URL = window.location.href;
-const articleId = URL.slice(URL.indexOf("?")+4); // This checks the URL and takes the part after "?id="
+const articleId = URL.substring(URL.indexOf("?")+4, URL.indexOf("&")); // This checks the URL and takes the part after "?id="
+let pageArticle = URL.slice(URL.indexOf("&")+6);
+console.log(pageArticle)
 
 let articleTitle, articleText, articleTags, articleImage;
 
 console.log(articleId);
-fetch(`https://foodog.herokuapp.com/articles`)
+fetch(`https://foodog.herokuapp.com/articles/?page=${pageArticle}`)
     .then(response => {
         if (response.ok) {
             response.json()
@@ -26,7 +28,7 @@ fetch(`https://foodog.herokuapp.com/articles`)
                             updateImage(articleImage);
                         }                         
                     }
-                    
+                /*     word = word.charAt(0).toUpperCase() + word.slice(1); */
                 });
         }
         else {
