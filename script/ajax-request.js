@@ -2,9 +2,9 @@ function createArticle(articles) {
     let myImg = document.querySelectorAll(".image-100")
     console.log(articles);
   
-    for (let key in articles.docs) {
+   /*  for (let key in articles.docs) {
         myImg[key].src = articles.docs[key].imgUrl;
-    }
+    } */
 }
 
 
@@ -19,7 +19,6 @@ fetch(`https://foodog.herokuapp.com/articles`)
         }
 })
 
-
 /* function letsPost() {
     console.log("ok")
     const url = `https://foodog.herokuapp.com/articles`;
@@ -28,14 +27,17 @@ fetch(`https://foodog.herokuapp.com/articles`)
         headers: {
             'Content-Type': 'application/json'
         },
-        body : JSON.stringify({"title":"blob()", "text": `This example builds a FormData instance containing values for fields named "username", "accountnum", "userfile" and "webmasterfile", then uses the XMLHttpRequest method send() to send the form's data. The field 'webmasterfile' is a Blob. A Blob object represents a file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system. In order to build a Blob you can invoke the Blob() constructor.`, "tags":["Wellness", "test"], "image": `http://webmalin.ch/wp-content/uploads/2016/09/Post-Blob-Jump-Piscine-Thonon-Ultimate-Family-D3S_1496-39.jpg` })
+        body : JSON.stringify({"title":"Les arbres et les chiens", "text": `Abattre ou non les arbres qui bordent les routes ? Le ­sujet ne prête pas du tout à la polémique. Mais alors, pas du tout. « Tout le monde aime les arbres. S’il y a une polémique, elle vient de ceux qui veulent les abattre », assure Chantal Pradines, déléguée générale de l’association Allées avenues, qui œuvre « pour la promotion du patrimoine culturel, naturel et paysager que constituent les allées d’arbres ».
+
+        « Tant qu’il y aura des extrémistes qui considèrent qu’on ne peut pas toucher au moindre arbre, la discussion sera vive », répond ­Jacques Robin, ingénieur routier à la retraite et ancien responsable des routes dans le département du Bas-Rhin.
+        
+        Pas de polémique, donc, sauf si elle vient du camp d’en face. On ne pensait pas que cette histoire d’arbres alignés le long des ­ex-nationales continuait de déclencher, en 2018, des débats aussi vifs. Sur l’échelle des controverses bien françaises, on n’en est certes pas au niveau des « gilets jaunes » ni du vélo en ville, mais pas loin. Deux camps s’affrontent, qui disposent chacun d’arguments trempés dans la science, des ­arguments que l’on retrouve, dans une version schématisée à l’extrême, aux comptoirs des bistrots où l’on voudra bien lancer le sujet, pour voir.`, "tags":["Wellness", "Nutrition"], "image": `https://images.pexels.com/photos/59523/pexels-photo-59523.jpeg?auto=compress%26cs=tinysrgb%26dpr=2%26h=750%26w=1260` })
     }
     console.log("ok2")
     fetch(url, init)
         .then(response => {
             if (response.ok) {
-                console.log("reponseok")
-                .then(console.log(response.json()))
+                console.log(response.json())
                 
             } else {
                 console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
@@ -43,4 +45,4 @@ fetch(`https://foodog.herokuapp.com/articles`)
         })
 } 
 
-letsPost(); */
+letsPost();  */
