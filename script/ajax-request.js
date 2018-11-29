@@ -4,13 +4,14 @@ let numberPagination = document.querySelector("#pagination").textContent;
 numberPagination = 1;
 
 function createArticle(articles) {
-    const domImg = document.querySelectorAll(".images")
+    const domImg = document.querySelectorAll(".image-100")
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
     console.log(articles);
     if (articles.page == numberPagination) {
         for (let key in articles.docs) {
+            key = parseInt(key);
             domImg[key].src = articles.docs[key].imgUrl;
             domTitles[key].innerHTML = articles.docs[key].title;
             domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}&page=${articles.page}`; // Generate article links
@@ -31,7 +32,6 @@ function createArticle(articles) {
         }
     }
     else if (articles.page == (numberPagination + 1)) {
-        
         for (let myKey in articles.docs) {
             myKey = parseInt(myKey);
             if (myKey < 4) {
