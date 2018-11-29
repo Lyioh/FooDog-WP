@@ -5,10 +5,41 @@ function createArticle(articles) {
     const domTags = document.querySelectorAll('.orange-tag');
     const domNavbar = document.querySelector('.navbar-element');
     console.log(articles);
-  
-   /*  for (let key in articles.docs) {
-        myImg[key].src = articles.docs[key].imgUrl;
-    } */
+
+    let navbarCategories = []; // Will contain every possible tag
+
+    for (let key in articles.docs) {
+        console.log(key);
+        console.log(domImg);
+        domImg[key].src = articles.docs[key].imgUrl;
+        domTitles[key].innerHTML = articles.docs[key].title;
+        domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}`; // Generate article links
+
+        /* 
+        * GENERATE NAVBAR CATEGORIES
+        */
+
+        /*
+        articles.docs[key].tagForArticle.map((tag) => {
+            if (!navbarCategories.includes(tag.toLowerCase()))
+                navbarCategories.push(tag.toLowerCase());
+        }); // Makes a copy of each tag if it's not already in the array
+       */ 
+
+        if (key == 0) {
+            let tags = articles.docs[key].tagForArticle.join(" ");
+            domTags[0].innerHTML = tags;
+        }
+        else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
+            let tags = articles.docs[key].tagForArticle.join(" ");
+            domTags[key-4].innerHTML = tags;
+        }
+
+        if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
+            let text = shortenText(articles.docs[key].text, 40); // Synopsis
+            domSynopsis[key - 5].innerHTML = text;
+        }
+    }
 }
 
 /** 
@@ -34,6 +65,7 @@ fetch(`https://foodog.herokuapp.com/articles`)
             console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
         }
     })
+
 
 /* function letsPost() {
     console.log("ok")
