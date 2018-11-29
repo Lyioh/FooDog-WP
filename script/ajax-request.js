@@ -24,6 +24,7 @@ function createArticle(articles) {
                 let tags = articles.docs[key].tagForArticle.join(" ");
                 domTags[key - 4].innerHTML = tags;
             }
+            
 
             if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
                 let text = shortenText(articles.docs[key].text, 40); // Synopsis
