@@ -1,52 +1,55 @@
+let divImgFeature = document.querySelectorAll(".imgAjax > img")
+let divTitleFooter = document.querySelectorAll(".imgAjax > a")
+let numberPagination = document.querySelector("#pagination").textContent;
+numberPagination = 1;
+
 function createArticle(articles) {
-    const domImg = document.querySelectorAll(".images")
+    const domImg = document.querySelectorAll(".image-100")
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
-    const domNavbar = document.querySelector('.navbar-element');
     console.log(articles);
+    if (articles.page == numberPagination) {
+        for (let key in articles.docs) {
+            key = parseInt(key);
+            domImg[key].src = articles.docs[key].imgUrl;
+            domTitles[key].innerHTML = articles.docs[key].title;
+            domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}&page=${articles.page}`; // Generate article links
 
-    let navbarCategories = []; // Will contain every possible tag
+            if (key == 0) {
+                let tags = articles.docs[key].tagForArticle.join(" ");
+                domTags[0].innerHTML = tags;
+            }
+            else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
+                let tags = articles.docs[key].tagForArticle.join(" ");
+                domTags[key - 4].innerHTML = tags;
+            }
 
-    for (let key in articles.docs) {
-        console.log(key);
-        console.log(domImg);
-        domImg[key].src = articles.docs[key].imgUrl;
-        domTitles[key].innerHTML = articles.docs[key].title;
-        domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}`; // Generate article links
-
-        /* 
-        * GENERATE NAVBAR CATEGORIES
-        */
-
-        /*
-        articles.docs[key].tagForArticle.map((tag) => {
-            if (!navbarCategories.includes(tag.toLowerCase()))
-                navbarCategories.push(tag.toLowerCase());
-        }); // Makes a copy of each tag if it's not already in the array
-       */ 
-
-        if (key == 0) {
-            let tags = articles.docs[key].tagForArticle.join(" ");
-            domTags[0].innerHTML = tags;
+            if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
+                let text = shortenText(articles.docs[key].text, 40); // Synopsis
+                domSynopsis[key - 5].innerHTML = text;
+            }
         }
-        else if (key >= 5) { // SKIP FIRST RIGHT SECTION FOR TAGS
-            let tags = articles.docs[key].tagForArticle.join(" ");
-            domTags[key-4].innerHTML = tags;
-        }
-
-        if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
-            let text = shortenText(articles.docs[key].text, 40); // Synopsis
-            domSynopsis[key - 5].innerHTML = text;
+    }
+    else if (articles.page == (numberPagination + 1)) {
+        for (let myKey in articles.docs) {
+            myKey = parseInt(myKey);
+            if (myKey < 4) {
+                domImg[myKey + 10].src = articles.docs[myKey].imgUrl;
+                domTitles[myKey + 10].innerHTML = articles.docs[myKey].title;
+                domTitles[myKey + 10].href = `single-page.html?id=${articles.docs[myKey]._id}&page=${articles.page}`;
+                let texts = shortenText(articles.docs[myKey].text, 40); // Synopsis
+                domSynopsis[myKey + 5].innerHTML = texts;
+            }
         }
     }
 }
 
 /** 
- * @param {String} text : Text to shorten
- * @param {Number} length : Wanted final length in words (number)
- * @return sliced text
- **/
+* @param {String} text : Text to shorten
+* @param {Number} length : Wanted final length in words (number)
+* @return sliced text
+**/
 
 const shortenText = (text, length) => {
     let res = text.split(' ').slice(0, length);
@@ -54,40 +57,73 @@ const shortenText = (text, length) => {
     return res.join(' ') + `...`;
 }
 
+/*
+* Randomize The article Featured FOOTER
+*/
+function randomRecursive(articlesObj, randomNumb, theArray, indice) {
+    let theTitle = "";
+    randomNumb = Math.floor(Math.random() * (articlesObj.docs).length);
+    if (theArray.includes(randomNumb)) {
+        randomRecursive(articlesObj, randomNumb, theArray, indice);
+    }
+    else {
+        theArray[indice] = randomNumb;
+        divImgFeature[indice].src = articlesObj.docs[randomNumb].imgUrl;
+        divTitleFooter[indice].href = `single-page.html?id=${articlesObj.docs[randomNumb]._id}`;
+        if (articlesObj.docs[randomNumb].title.length > 28) {
+            theTitle = shortenText(articlesObj.docs[randomNumb].title, 7);
+            divTitleFooter[indice].textContent = theTitle;
+        }
+        else {
+            divTitleFooter[indice].textContent = articlesObj.docs[randomNumb].title;
+        }
+    }
+}
+/*
+* Picture Artcile Featured FOOTER
+*/
+function articlesFooter(articles) {
+    let randNumArray = new Array;
+    for (let i = 0; i < 3; i++) {
+        let randomNumber;
+        randomRecursive(articles, randomNumber, randNumArray, i);
+    }
+}
+/*
+* Picture Instagram FOOTER
+*/
+function instagramFooter(articles) {
+    let instagramImg = document.querySelectorAll("#instagram-image-footer")
+    for (key in articles.docs) {
+        if (key < 9) {
+            instagramImg[key].src = articles.docs[key].imgUrl;
+        }
+    }
+}
 
-fetch(`https://foodog.herokuapp.com/articles`)
+fetch(`https://foodog.herokuapp.com/articles/?page=${numberPagination}`)
     .then(response => {
         if (response.ok) {
             response.json()
-                .then(articles => createArticle(articles));
+                .then(articles => {
+                    createArticle(articles);
+                    articlesFooter(articles);
+                    instagramFooter(articles);
+                })
         }
         else {
             console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
         }
     })
 
+fetch(`https://foodog.herokuapp.com/articles/?page=${numberPagination + 1}`)
+    .then(response => {
+        if (response.ok) {
+            response.json()
+                .then(secondArticle => createArticle(secondArticle))
+        }
+        else {
+            console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+        }
+    })
 
-/* function letsPost() {
-    console.log("ok")
-    const url = `https://foodog.herokuapp.com/articles`;
-    let init = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body : JSON.stringify({"title":"blob()", "text": `This example builds a FormData instance containing values for fields named "username", "accountnum", "userfile" and "webmasterfile", then uses the XMLHttpRequest method send() to send the form's data. The field 'webmasterfile' is a Blob. A Blob object represents a file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system. In order to build a Blob you can invoke the Blob() constructor.`, "tags":["Wellness", "test"], "image": `http://webmalin.ch/wp-content/uploads/2016/09/Post-Blob-Jump-Piscine-Thonon-Ultimate-Family-D3S_1496-39.jpg` })
-    }
-    console.log("ok2")
-    fetch(url, init)
-        .then(response => {
-            if (response.ok) {
-                console.log("reponseok")
-                .then(console.log(response.json()))
-                
-            } else {
-                console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
-            }
-        })
-} 
-
-letsPost(); */
