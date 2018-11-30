@@ -1,17 +1,16 @@
 let divImgFeature = document.querySelectorAll(".imgAjax > img")
 let divTitleFooter = document.querySelectorAll(".imgAjax > a")
-let numberPagination = document.querySelector("#pagination").textContent;
-numberPagination = 1;
+let storagePage = document.querySelector("#page")
+let numberPagination = 1;
 
-function createArticle(articles) {
+function createArticle(articles, pageNumber) {
     const domImg = document.querySelectorAll(".image-100")
     const domTitles = document.querySelectorAll('.article-title');
     const domSynopsis = document.querySelectorAll('.article-synopsis');
     const domTags = document.querySelectorAll('.orange-tag');
     console.log(articles);
-    if (articles.page == numberPagination) {
+    if (articles.page == pageNumber) {
         for (let key in articles.docs) {
-            key = parseInt(key);
             domImg[key].src = articles.docs[key].imgUrl;
             domTitles[key].innerHTML = articles.docs[key].title;
             domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}&page=${articles.page}`; // Generate article links
@@ -32,7 +31,7 @@ function createArticle(articles) {
             }
         }
     }
-    else if (articles.page == (numberPagination + 1)) {
+    else if (articles.page == (pageNumber + 1)) {
         for (let myKey in articles.docs) {
             myKey = parseInt(myKey);
             if (myKey < 4) {
@@ -101,30 +100,42 @@ function instagramFooter(articles) {
         }
     }
 }
+function loadPage(pageNumber) {
+    fetch(`https://foodog.herokuapp.com/articles/?page=${pageNumber}`)
+        .then(response => {
+            if (response.ok) {
+                response.json()
+                    .then(articles => {
+                        createArticle(articles, pageNumber);
+                        articlesFooter(articles);
+                        instagramFooter(articles);
+                    })
+            }
+            else {
+                console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+            }
+        })
 
-fetch(`https://foodog.herokuapp.com/articles/?page=${numberPagination}`)
-    .then(response => {
-        if (response.ok) {
-            response.json()
-                .then(articles => {
-                    createArticle(articles);
-                    articlesFooter(articles);
-                    instagramFooter(articles);
-                })
-        }
-        else {
-            console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
-        }
-    })
+    fetch(`https://foodog.herokuapp.com/articles/?page=${pageNumber + 1}`)
+        .then(response => {
+            if (response.ok) {
+                response.json()
+                    .then(secondArticle => createArticle(secondArticle, pageNumber))
+            }
+            else {
+                console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+            }
+        })
+}
 
-fetch(`https://foodog.herokuapp.com/articles/?page=${numberPagination + 1}`)
-    .then(response => {
-        if (response.ok) {
-            response.json()
-                .then(secondArticle => createArticle(secondArticle))
-        }
-        else {
-            console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
-        }
-    })
+loadPage(numberPagination);
 
+document.querySelector("#pagination").addEventListener("click", function getPageNumber(event) {
+    let pageArray = document.querySelectorAll(".page-link")
+    let myNumber = event.target.textContent;
+    myNumber = parseInt(myNumber);
+    loadPage(myNumber);
+    pageArray[0].innerHTML = myNumber;
+    pageArray[1].innerHTML = myNumber + 1;
+    document.documentElement.scrollTop = 0;
+})
