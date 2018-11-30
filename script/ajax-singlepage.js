@@ -12,32 +12,40 @@ let divTitleFeature = document.querySelectorAll(".imgAjax > a")
 * Randomize The article Featured FOOTER
 */
 function randomRecursive(articlesObj, randomNumb, theArray, indice) {
+    let theTitle = "";
     randomNumb = Math.floor(Math.random() * (articlesObj.docs).length);
     if (theArray.includes(randomNumb)) {
-        randomRecursive(articlesObj, randomNumb, theArray, indice)
-    } else {
+        randomRecursive(articlesObj, randomNumb, theArray, indice);
+    }
+    else {
         theArray[indice] = randomNumb;
         divImgFeature[indice].src = articlesObj.docs[randomNumb].imgUrl;
-        divTitleFeature[indice].textContent = articlesObj.docs[randomNumb].title;
+        divTitleFooter[indice].href = `single-page.html?id=${articlesObj.docs[randomNumb]._id}`;
+        if (articlesObj.docs[randomNumb].title.length > 28) {
+            theTitle = shortenText(articlesObj.docs[randomNumb].title, 7);
+            divTitleFooter[indice].textContent = theTitle;
+        }
+        else {
+            divTitleFooter[indice].textContent = articlesObj.docs[randomNumb].title;
+        }
     }
 }
 /*
 * Picture Artcile Featured FOOTER
 */
-function articlesFeatures(articles) {
-    console.log("im in")
+function articlesFooter(articles) {
     let randNumArray = new Array;
     for (let i = 0; i < 3; i++) {
-        let randomNumber = Math.floor(Math.random() * (articles.docs).length);
-        randomRecursive(articles, randomNumber, randNumArray, i)
+        let randomNumber;
+        randomRecursive(articles, randomNumber, randNumArray, i);
     }
-} 
+}
 /*
 * Picture Instagram FOOTER
 */
-function instagramFeatures(articles) {
+function instagramFooter(articles) {
     let instagramImg = document.querySelectorAll(".instagram-image-footer")
-    for (let key in articles.docs) {
+    for (key in articles.docs) {
         if (key < 9) {
             instagramImg[key].src = articles.docs[key].imgUrl;
         }
