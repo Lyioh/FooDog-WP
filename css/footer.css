@@ -38,7 +38,7 @@ footer{
     color: gray;
 }
 
-#post-image{
+.post-image{
  height:70px;
  width:70px;
  margin:4px;
