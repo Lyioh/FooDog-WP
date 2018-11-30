@@ -78,7 +78,8 @@ fetch(`https://foodog.herokuapp.com/articles/?page=${pageArticle}`)
                         if(articles.docs[i]._id == articleId){ // ID matches the ID from the URL
                             console.table(articles.docs[i]);
                             articleTitle = articles.docs[i].title;
-                            articleText = articles.docs[i].text;
+                            /* articleText = articles.docs[i].text; */
+                            articleText = articles.docs[i].text.charAt(0).toUpperCase() + articles.docs[i].text.slice(1);
                             articleTags = articles.docs[i].tagForArticle.join(' '); // Strinfigy the array
                             articleImage = articles.docs[i].imgUrl;
                             
@@ -88,9 +89,9 @@ fetch(`https://foodog.herokuapp.com/articles/?page=${pageArticle}`)
                             updateImage(articleImage);
                         }                         
                     }
+                    console.log("im in json")
                     articlesFeatures(articles)
                     instagramFeatures(articles)
-                /*     word = word.charAt(0).toUpperCase() + word.slice(1); */
                 });
         }
         else {
