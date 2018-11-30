@@ -1,5 +1,7 @@
 #main-article img {
-    width: 100%;
+    object-fit: cover;
+    width: 780px;
+    height: 500px;
 }
 
 .centered {
@@ -28,9 +30,16 @@
     font-weight: 800;
     color: rgb(75, 79, 84);
     text-align: center;
+    display: inline-block;
+    position: relative;
 }
 
-
+.other-articles-img {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    padding-top: 2em;
+}
 /*
 * FEATURED SECTION
 */
