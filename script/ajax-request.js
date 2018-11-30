@@ -93,7 +93,7 @@ function articlesFooter(articles) {
 * Picture Instagram FOOTER
 */
 function instagramFooter(articles) {
-    let instagramImg = document.querySelectorAll("#instagram-image-footer")
+    let instagramImg = document.querySelectorAll(".instagram-image-footer")
     for (key in articles.docs) {
         if (key < 9) {
             instagramImg[key].src = articles.docs[key].imgUrl;
