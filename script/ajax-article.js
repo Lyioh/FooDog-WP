@@ -79,5 +79,3 @@ const shortenText = (text, length) => {
     res[0] = res[0].charAt(0).toUpperCase() + res[0].slice(1);
     return res.join(' ') + `...`;
 }
-
-shortenText()

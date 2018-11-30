@@ -4,7 +4,7 @@ footer{
     font-family: 'Open Sans', sans-serif;
 }
 
-#titulos{
+.titulos{
     color: gray;
 }
 
@@ -44,7 +44,7 @@ footer{
  margin:4px;
 }
 
-#instagram-image-footer{
+.instagram-image-footer{
  height:70px;
  width:70px;
  margin:4px;
