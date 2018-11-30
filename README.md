@@ -5,7 +5,7 @@
 Any web browser.
 
 ### Installing and Running
-Launch [index.html](https://brrrouillard.github.io/foodog/).
+Launch [index.html](https://brrrouillard.github.io/FooDog-WP/).
 
 ## Purpose
 I built this webpage with [Lionel](https://github.com/Lyioh), [Alexandru](https://github.com/znopyk) and [Gabriela](https://github.com/GabrielaTh) during my internship at BeCode. The goal was to remake a website using a given layout.
