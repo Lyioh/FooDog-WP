@@ -6,8 +6,14 @@ let pageArticle = URL.slice(URL.indexOf("&")+6);
 
 let articleTitle, articleText, articleTags, articleImage;
 let divImgFeature = document.querySelectorAll(".imgAjax > img")
-let divTitleFeature = document.querySelectorAll(".imgAjax > a")
+let divTitleFooter = document.querySelectorAll(".imgAjax > a")
 
+
+const shortenText = (text, length) => {
+    let res = text.split(' ').slice(0, length);
+    res[0] = res[0].charAt(0).toUpperCase() + res[0].slice(1);
+    return res.join(' ') + `...`;
+}
 /*
 * Randomize The article Featured FOOTER
 */
@@ -45,7 +51,7 @@ function articlesFooter(articles) {
 */
 function instagramFooter(articles) {
     let instagramImg = document.querySelectorAll(".instagram-image-footer")
-    for (key in articles.docs) {
+    for (let key in articles.docs) {
         if (key < 9) {
             instagramImg[key].src = articles.docs[key].imgUrl;
         }
@@ -97,8 +103,8 @@ fetch(`https://foodog.herokuapp.com/articles/?page=${pageArticle}`)
                         }                         
                     }
                     console.log("im in json")
-                    articlesFeatures(articles)
-                    instagramFeatures(articles)
+                    articlesFooter(articles)
+                    instagramFooter(articles)
                 });
         }
         else {
