@@ -97,7 +97,7 @@
     display: inline-block;
     text-decoration: none;
     background-color: white;
-    border: 1px solid #cbcbcb;;
+    border: 1px solid #cbcbcb;
     text-align: center;
     border-radius: 50%;
     height: 36px;
@@ -114,4 +114,28 @@
     border-radius: 50%;
     height: 36px;
     width: 36px;
+}
+
+.page-link:hover {
+    background-color: #4c4f53;
+    color: white;
+}
+
+
+#previousP {
+    color: black;
+    display: inline;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #cbcbcb;
+    text-align: center;
+    border-radius: 50%;
+    margin: .5em;
+    padding: .5em;
+    display: none;
+}
+
+#previousP:hover {
+    background-color: #4c4f53;
+    color: white;
 }
