@@ -1,6 +1,7 @@
 let divImgFeature = document.querySelectorAll(".imgAjax > img")
 let divTitleFooter = document.querySelectorAll(".imgAjax > a")
 let storagePage = document.querySelector("#page")
+let pageArray = document.querySelectorAll(".dynamicLinks");
 let numberPagination = 1;
 
 function createArticle(articles, pageNumber) {
@@ -14,7 +15,7 @@ function createArticle(articles, pageNumber) {
             domImg[key].src = articles.docs[key].imgUrl;
             domTitles[key].innerHTML = articles.docs[key].title;
             domTitles[key].href = `single-page.html?id=${articles.docs[key]._id}&page=${articles.page}`; // Generate article links
-
+            pageArray[2].innerHTML = articles.pages;
             if (key == 0) {
                 let tags = articles.docs[key].tagForArticle.join(" ");
                 domTags[0].innerHTML = tags;
@@ -23,7 +24,7 @@ function createArticle(articles, pageNumber) {
                 let tags = articles.docs[key].tagForArticle.join(" ");
                 domTags[key - 4].innerHTML = tags;
             }
-            
+
 
             if (key >= 5) { // SKIP THE 5 FIRST ARTICLES FOR SYNOPSIS
                 let text = shortenText(articles.docs[key].text, 40); // Synopsis
@@ -131,11 +132,29 @@ function loadPage(pageNumber) {
 loadPage(numberPagination);
 
 document.querySelector("#pagination").addEventListener("click", function getPageNumber(event) {
-    let pageArray = document.querySelectorAll(".page-link")
+    const btnPrev = document.querySelector("#previousP");
+    let pagePrevious;
     let myNumber = event.target.textContent;
-    myNumber = parseInt(myNumber);
-    loadPage(myNumber);
-    pageArray[0].innerHTML = myNumber;
-    pageArray[1].innerHTML = myNumber + 1;
-    document.documentElement.scrollTop = 0;
+
+    if (myNumber === "Previous") {
+        pagePrevious = pageArray[0].textContent;
+        pagePrevious = parseInt(pagePrevious)
+        loadPage(pagePrevious - 1);
+        pageArray[0].innerHTML = pagePrevious - 1;
+        pageArray[1].innerHTML = pagePrevious;
+        document.documentElement.scrollTop = 0;
+    } else {
+        myNumber = parseInt(myNumber);
+        loadPage(myNumber);
+        pageArray[0].innerHTML = myNumber;
+        pageArray[1].innerHTML = myNumber + 1;
+        document.documentElement.scrollTop = 0;
+    }
+
+    if (myNumber > 1) {
+        btnPrev.style.display = "inline";
+    } else {
+        btnPrev.style.display = "none";
+    }
+
 })
